@@ -1,6 +1,5 @@
 import random
 from collections import Counter
-from re import I
 
 WTOWER = '1.Πύργος Λευκός'
 BBISHOP = '2.Αξιωματικός Μαύρος'
