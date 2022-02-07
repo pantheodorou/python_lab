@@ -17,9 +17,16 @@ def check_winner(wtower_pos, bbishop_pos, board_size):
     if wtower_pos[0] == bbishop_pos[0] or wtower_pos[1] == bbishop_pos[1]:
         return WTOWER
     # Έλεγχος για τον Μαύρο αξιωματικό
+    bisop_control_positions = find_diagonal_cells(board_size, bbishop_pos)
+    if wtower_pos in bisop_control_positions:
+        return BBISHOP
+    # Διαφορετικά επεστρεψε ισοπαλία
+    return DRAW
+
+
+def find_diagonal_cells(board_size, bbishop_pos):
     bisop_control_positions = []
     xbishop, ybishop = bbishop_pos
-
     for i in range(1, max(board_size)):
         ax, ay = xbishop+i, ybishop - i
         bx, by = xbishop-i, ybishop - i
@@ -33,22 +40,21 @@ def check_winner(wtower_pos, bbishop_pos, board_size):
             bisop_control_positions.append((cx, cy))
         if dx >= 0 and dy >= 0:
             bisop_control_positions.append((dx, dy))
-    if wtower_pos in bisop_control_positions:
-        return BBISHOP
-    return DRAW
+    return bisop_control_positions
 
 
-def play_game(size):
+def play_game(board_size):
     """
     result: winner
     drow, bishop, tower
     """
-    wtower_position = generate_random_position(size)
-    bbishop_position = generate_random_position(size)
-    while wtower_position == bbishop_position:
-        bbishop_position = generate_random_position(size)
+    wtower_position = generate_random_position(board_size)
+    bbishop_position = generate_random_position(board_size)
 
-    result = check_winner(wtower_position, bbishop_position, size)
+    while wtower_position == bbishop_position:
+        bbishop_position = generate_random_position(board_size)
+
+    result = check_winner(wtower_position, bbishop_position, board_size)
     print(
         f"Θέση πύργου:{wtower_position}, Θέση αξιωματικού:{bbishop_position}, Νικητής: {result}")
     return result
