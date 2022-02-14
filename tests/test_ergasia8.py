@@ -1,4 +1,4 @@
-import ergasia8 as er8
+import e08_chess_tower_bishop as er8
 
 
 def test_check_winner():

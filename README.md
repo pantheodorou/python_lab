@@ -1,2 +1,10 @@
-# python_lab
-workshop for univercity lessons
+# ΕΙΣΑΓΩΓΗ ΣΤΗΝ ΕΠΙΣΤΗΜΗ ΤΩΝ ΥΠΟΛΟΓΙΣΤΩΝ
+
+## Εργασίες μαθήματος περιόδου Α εξαμήνου
+
+- 01_triliza.py : εργασία 1
+- 03_character.py : εργασία 3
+- 08_chess_tower_bishop.py : εργασία 8
+- 12_cloudflare.py : εργασία 12
+
+Παναγιώτης Ν.Θεοδώρου

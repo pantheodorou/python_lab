@@ -1,4 +1,4 @@
-import triliza_engine as ten
+import triliza_engine_old as ten
 
 
 def test_check_win():
